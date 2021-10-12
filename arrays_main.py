@@ -99,6 +99,13 @@ print("-----ARRAY-----------TAMAÑO-----SUBARRAYS------SA cant IMPAR DE IMPARES 
 
 for i in range (0, 8):
     lst = [int(x) for x in list('{:03b}'.format(i))]
-    print(lst, "           ",len(lst), "           ",get_max_sub(lst), "                   ",solve_odd_odd(lst), "                      ",solve_even_odd(lst)  )
+    print(lst, "            ",len(lst), "           ",get_max_sub(lst), "                   ",solve_odd_odd(lst), "                      ",solve_even_odd(lst)  )
+    print("--------------------------------------------------------------------------------------------------------------------------------------------")
 
+print("\n\n-----ARRAY-----------TAMAÑO-----SUBARRAYS------SA cant IMPAR DE IMPARES ---- SA cant PAR DE IMPARES--------     ")
+
+for i in range (0, 16):
+    lst = [int(x) for x in list('{:04b}'.format(i))]
+    print(lst, "         ",len(lst), "           ",get_max_sub(lst), "                   ",solve_odd_odd(lst), "                      ",solve_even_odd(lst)  )
+    print(        "--------------------------------------------------------------------------------------------------------------------------------------------")
 
