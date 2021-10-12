@@ -72,11 +72,10 @@ def solve_even_odd(arr):
     #        print (is_odd(i))
     for i in range(0, len(arr)):  # We have to scan 'i' blocks
         for n in range(0, i + 1):  # Every block will have 'n' subarrays in the current block
-            for r in range(n, len(
-                    arr) - i + n):  # every subarray will be scanned starting in n position and ending in len(arr)-i+n
+            for r in range(n, len(arr) - i + n):  # every subarray will be scanned starting in n position and ending in len(arr)-i+n
                 if arr[r] % 2 != 0:  # is_odd(arr[r]) == True:
                     odd += 1  # if the current item is odd, then we add to the momentary odd counter
-            if odd % 2 == 0:  # is_odd(odd) == True: # if the amount of odd numbers in this subarray is odd then we add to out total
+            if odd % 2 == 0 and odd != 0:  # if the amount of odd numbers in this subarray is even and it's count is NOT zero, then we add to our total
                 total_even_sa += 1
             odd = 0  # we reset the subarray odd counter
     #    print (total_odd_sa)
@@ -92,12 +91,14 @@ print("La cantidad de subarrays conteniendo una cantidad impar de numeros impare
 #for i in range (0, 256):
 #    print(list(bin(i))[2:])
 
-for i in range (0, 7):
+#for i in range (0, 7):
+#    lst = [int(x) for x in list('{:03b}'.format(i))]
+#    print("La lista", lst, "tiene un tamaño", "par" if len(lst) % 2 == 0 else "impar", "de", len(lst), "elementos, con", get_max_sub(lst), "posibles subarrays, de los cuales", solve_odd_odd(lst), "contienen una cantidad impar de elementos impares,", solve_even_odd(lst), "contienen una cantidad par de elementos impares" )
+
+print("-----ARRAY-----------TAMAÑO-----SUBARRAYS------SA cant IMPAR DE IMPARES ---- SA cant PAR DE IMPARES--------     ")
+
+for i in range (0, 8):
     lst = [int(x) for x in list('{:03b}'.format(i))]
-    print("La lista", lst, "tiene un tamaño", "par" if len(lst) % 2 == 0 else "impar", "de", len(lst), "elementos, con", get_max_sub(lst), "posibles subarrays, de los cuales", solve_odd_odd(lst), "contienen una cantidad impar de elementos impares,", solve_even_odd(lst), "contienen una cantidad par de elementos impares" )
-
-
-
-
+    print(lst, "           ",len(lst), "           ",get_max_sub(lst), "                   ",solve_odd_odd(lst), "                      ",solve_even_odd(lst)  )
 
 
