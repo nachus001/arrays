@@ -81,6 +81,61 @@ def solve_even_odd(arr):
     #    print (total_odd_sa)
     return total_even_sa
 
+# encuentra cuantos sublistas que contengan un numero impar de numeros pares
+def solve_odd_even(arr):
+    # if the len of the array is 0 return 0
+    if len(arr) == 0:
+        #        print("Len was 0")
+        return 0
+    # now we know that tha max possible subarrays contained in an array of N size
+    # is N(N+1)/2 arrays
+    even = 0  # our momentary odd counter
+    total_even_sa = 0  # outr total odd counter
+    #    print(arr)
+    #    start = 0
+    #    print (len(arr))
+    #    for i in arr:
+    #        print (is_odd(i))
+    for i in range(0, len(arr)):  # We have to scan 'i' blocks
+        for n in range(0, i + 1):  # Every block will have 'n' subarrays in the current block
+            for r in range(n, len(arr) - i + n):  # every subarray will be scanned starting in n position and ending in len(arr)-i+n
+                if arr[r] % 2 == 0:  # si el item es impar
+                    even += 1  # if the current item is odd, then we add to the momentary odd counter
+            if even % 2 != 0:  # si la cantidad de numeros pares en la sublista es impar
+                total_even_sa += 1
+            even = 0  # we reset the subarray even counter
+    #    print (total_odd_sa)
+    return total_even_sa
+
+
+
+
+# funcion para determinar cuantos subarrays con cantidad par de numeros pares
+def solve_even_even(arr):
+    # if the len of the array is 0 return 0
+    if len(arr) == 0:
+        #        print("Len was 0")
+        return 0
+    # now we know that tha max possible subarrays contained in an array of N size
+    # is N(N+1)/2 arrays
+    even = 0  # our momentary odd counter
+    total_even_sa = 0  # outr total odd counter
+    #    print(arr)
+    #    start = 0
+    #    print (len(arr))
+    #    for i in arr:
+    #        print (is_odd(i))
+    for i in range(0, len(arr)):  # We have to scan 'i' blocks
+        for n in range(0, i + 1):  # Every block will have 'n' subarrays in the current block
+            for r in range(n, len(arr) - i + n):  # every subarray will be scanned starting in n position and ending in len(arr)-i+n
+                if arr[r] % 2 == 0:  # si el numero es par sumamos 1 al contador local
+                    even += 1  # if the current item is odd, then we add to the momentary odd counter
+            if even % 2 == 0 and even != 0:  # if the amount of odd numbers in this subarray is even and it's count is NOT zero, then we add to our total
+                total_even_sa += 1
+            even = 0  # we reset the sublist even counter
+    #    print (total_odd_sa)
+    return total_even_sa
+
 
 array_1 = [1, 2, 2, 1, 2, 1 , 2,1]
 
@@ -95,17 +150,47 @@ print("La cantidad de subarrays conteniendo una cantidad impar de numeros impare
 #    lst = [int(x) for x in list('{:03b}'.format(i))]
 #    print("La lista", lst, "tiene un tamaño", "par" if len(lst) % 2 == 0 else "impar", "de", len(lst), "elementos, con", get_max_sub(lst), "posibles subarrays, de los cuales", solve_odd_odd(lst), "contienen una cantidad impar de elementos impares,", solve_even_odd(lst), "contienen una cantidad par de elementos impares" )
 
-print("-----ARRAY-----------TAMAÑO-----SUBARRAYS------SA cant IMPAR DE IMPARES ---- SA cant PAR DE IMPARES--------     ")
+print("\n\n                                CANTIDAD       SUBLISTAS              SUBLISTAS            SUBLISTAS           SUBLISTAS   ")
+print("                               POSIBLE DE     CON CANTIDAD           CON CANTIDAD         CON CANTIDAD        CON CANTIDAD                                                          ")
+print("---LISTA-------------TAMAÑO----SUBLISTAS----IMPAR DE N. IMPARES --- PAR DE N IMPARES ---IMPAR de N. PARES --  PAR DE N. PARES")
 
 for i in range (0, 8):
     lst = [int(x) for x in list('{:03b}'.format(i))]
-    print(lst, "            ",len(lst), "           ",get_max_sub(lst), "                   ",solve_odd_odd(lst), "                      ",solve_even_odd(lst)  )
+    print(lst, "            ",len(lst), "         ",get_max_sub(lst), "           ",solve_odd_odd(lst), "                    ",solve_even_odd(lst) , "                    ", solve_odd_even(lst), "                  ", solve_even_even(lst) )
     print("--------------------------------------------------------------------------------------------------------------------------------------------")
 
-print("\n\n-----ARRAY-----------TAMAÑO-----SUBARRAYS------SA cant IMPAR DE IMPARES ---- SA cant PAR DE IMPARES--------     ")
+print("\n\n                                CANTIDAD       SUBLISTAS              SUBLISTAS            SUBLISTAS           SUBLISTAS   ")
+print("                               POSIBLE DE     CON CANTIDAD           CON CANTIDAD         CON CANTIDAD        CON CANTIDAD                                                          ")
+print("---LISTA-------------TAMAÑO----SUBLISTAS----IMPAR DE N. IMPARES --- PAR DE N IMPARES ---IMPAR de N. PARES --  PAR DE N. PARES")
 
 for i in range (0, 16):
     lst = [int(x) for x in list('{:04b}'.format(i))]
-    print(lst, "         ",len(lst), "           ",get_max_sub(lst), "                   ",solve_odd_odd(lst), "                      ",solve_even_odd(lst)  )
-    print(        "--------------------------------------------------------------------------------------------------------------------------------------------")
+    print(lst, "            ", len(lst), "         ", get_max_sub(lst), "           ", solve_odd_odd(lst),
+          "                    ", solve_even_odd(lst), "                    ", solve_odd_even(lst),
+          "                  ", solve_even_even(lst))
+    print("--------------------------------------------------------------------------------------------------------------------------------------------")
 
+print("\n\n                                CANTIDAD       SUBLISTAS              SUBLISTAS            SUBLISTAS           SUBLISTAS   ")
+print("                               POSIBLE DE     CON CANTIDAD           CON CANTIDAD         CON CANTIDAD        CON CANTIDAD                                                          ")
+print("---LISTA-------------TAMAÑO----SUBLISTAS----IMPAR DE N. IMPARES --- PAR DE N IMPARES ---IMPAR de N. PARES --  PAR DE N. PARES")
+
+for i in range (0, 32):
+    lst = [int(x) for x in list('{:05b}'.format(i))]
+    print(lst, "      ", len(lst), "         ", get_max_sub(lst), "             ", solve_odd_odd(lst),
+          "                 ", solve_even_odd(lst), "                    ", solve_odd_even(lst),
+          "                  ", solve_even_even(lst))
+    print("--------------------------------------------------------------------------------------------------------------------------------------------")
+
+# print("\n\n-----ARRAY-----------TAMAÑO-----SUBARRAYS------SA cant IMPAR DE IMPARES ---- SA cant PAR DE IMPARES--------     ")
+#
+# for i in range (0, 32):
+#     lst = [int(x) for x in list('{:05b}'.format(i))]
+#     print(lst, "       ",len(lst), "           ",get_max_sub(lst), "                   ",solve_odd_odd(lst), "                      ",solve_even_odd(lst)  )
+#     print(        "--------------------------------------------------------------------------------------------------------------------------------------------")
+#
+# print("\n\n-----ARRAY-----------TAMAÑO-----SUBARRAYS------SA cant IMPAR DE IMPARES ---- SA cant PAR DE IMPARES--------     ")
+#
+# for i in range (0, 64):
+#     lst = [int(x) for x in list('{:06b}'.format(i))]
+#     print(lst, "       ",len(lst), "           ",get_max_sub(lst), "                   ",solve_odd_odd(lst), "                      ",solve_even_odd(lst)  )
+#     print(        "--------------------------------------------------------------------------------------------------------------------------------------------")
