@@ -181,6 +181,19 @@ for i in range (0, 32):
           "                  ", solve_even_even(lst))
     print("--------------------------------------------------------------------------------------------------------------------------------------------")
 
+
+print("\n\n                                CANTIDAD       SUBLISTAS              SUBLISTAS            SUBLISTAS           SUBLISTAS   ")
+print("                               POSIBLE DE     CON CANTIDAD           CON CANTIDAD         CON CANTIDAD        CON CANTIDAD                                                          ")
+print("---LISTA-------------TAMAÑO----SUBLISTAS----IMPAR DE N. IMPARES --- PAR DE N IMPARES ---IMPAR de N. PARES --  PAR DE N. PARES")
+
+for i in range (0, 64):
+    lst = [int(x) for x in list('{:06b}'.format(i))]
+    print(lst, "      ", len(lst), "         ", get_max_sub(lst), "             ", solve_odd_odd(lst),
+          "                 ", solve_even_odd(lst), "                    ", solve_odd_even(lst),
+          "                  ", solve_even_even(lst))
+    print("--------------------------------------------------------------------------------------------------------------------------------------------")
+
+
 # print("\n\n-----ARRAY-----------TAMAÑO-----SUBARRAYS------SA cant IMPAR DE IMPARES ---- SA cant PAR DE IMPARES--------     ")
 #
 # for i in range (0, 32):
