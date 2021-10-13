@@ -150,48 +150,105 @@ print("La cantidad de subarrays conteniendo una cantidad impar de numeros impare
 #    lst = [int(x) for x in list('{:03b}'.format(i))]
 #    print("La lista", lst, "tiene un tamaño", "par" if len(lst) % 2 == 0 else "impar", "de", len(lst), "elementos, con", get_max_sub(lst), "posibles subarrays, de los cuales", solve_odd_odd(lst), "contienen una cantidad impar de elementos impares,", solve_even_odd(lst), "contienen una cantidad par de elementos impares" )
 
-print("\n\n                                CANTIDAD       SUBLISTAS              SUBLISTAS            SUBLISTAS           SUBLISTAS   ")
-print("                               POSIBLE DE     CON CANTIDAD           CON CANTIDAD         CON CANTIDAD        CON CANTIDAD                                                          ")
-print("---LISTA-------------TAMAÑO----SUBLISTAS----IMPAR DE N. IMPARES --- PAR DE N IMPARES ---IMPAR de N. PARES --  PAR DE N. PARES")
+print("\n\n               CANTIDAD          CANTIDAD            SUBLISTAS              SUBLISTAS            SUBLISTAS           SUBLISTAS   ")
+print("           DE NUMEROS PARES   DE NUMEROS IMPARES    CON CANTIDAD           CON CANTIDAD         CON CANTIDAD        CON CANTIDAD                                                          ")
+print("---LISTA------EN LA LISTA ----- EN LA LISTA ------ IMPAR DE N. IMPARES --- PAR DE N IMPARES ---IMPAR de N. PARES --  PAR DE N. PARES")
 
+sublist_diff_values = []
+for i in range (0, 2):
+    lst = [int(x) for x in list('{:01b}'.format(i))]
+    print(lst, "          ",  get_even_items_qty(lst),"             ", get_odd_items_qty(lst),"                    ", solve_odd_odd(lst), "                    ",solve_even_odd(lst) , "                    ", solve_odd_even(lst), "                  ", solve_even_even(lst) )
+    print("--------------------------------------------------------------------------------------------------------------------------------------------")
+    sublist_diff_values.append(solve_odd_odd(lst))
+print("El tamaño de lista es", len(lst), "\nLa cantidad posible de sublistas es",get_max_sub(lst), "\nLa cantidad de tamaños posibles de sublista es", len(set(sublist_diff_values)))
+#
+#
+
+print("\n\n               CANTIDAD          CANTIDAD            SUBLISTAS              SUBLISTAS            SUBLISTAS           SUBLISTAS   ")
+print("           DE NUMEROS PARES   DE NUMEROS IMPARES    CON CANTIDAD           CON CANTIDAD         CON CANTIDAD        CON CANTIDAD                                                          ")
+print("---LISTA------EN LA LISTA ----- EN LA LISTA ------ IMPAR DE N. IMPARES --- PAR DE N IMPARES ---IMPAR de N. PARES --  PAR DE N. PARES")
+
+sublist_diff_values = []
+for i in range (0, 4):
+    lst = [int(x) for x in list('{:02b}'.format(i))]
+    print(lst, "          ",  get_even_items_qty(lst),"             ", get_odd_items_qty(lst),"                    ", solve_odd_odd(lst), "                    ",solve_even_odd(lst) , "                    ", solve_odd_even(lst), "                  ", solve_even_even(lst) )
+    print("--------------------------------------------------------------------------------------------------------------------------------------------")
+    sublist_diff_values.append(solve_odd_odd(lst))
+print("El tamaño de lista es", len(lst), "\nLa cantidad posible de sublistas es",get_max_sub(lst), "\nLa cantidad de tamaños posibles de sublista es", len(set(sublist_diff_values)))
+
+#
+#
+
+print("\n\n               CANTIDAD          CANTIDAD            SUBLISTAS              SUBLISTAS            SUBLISTAS           SUBLISTAS   ")
+print("           DE NUMEROS PARES   DE NUMEROS IMPARES    CON CANTIDAD           CON CANTIDAD         CON CANTIDAD        CON CANTIDAD                                                          ")
+print("---LISTA------EN LA LISTA ----- EN LA LISTA ------ IMPAR DE N. IMPARES --- PAR DE N IMPARES ---IMPAR de N. PARES --  PAR DE N. PARES")
+
+sublist_diff_values = []
 for i in range (0, 8):
     lst = [int(x) for x in list('{:03b}'.format(i))]
-    print(lst, "            ",len(lst), "         ",get_max_sub(lst), "           ",solve_odd_odd(lst), "                    ",solve_even_odd(lst) , "                    ", solve_odd_even(lst), "                  ", solve_even_even(lst) )
+    print(lst, "          ",  get_even_items_qty(lst),"             ", get_odd_items_qty(lst),"                    ", solve_odd_odd(lst), "                    ",solve_even_odd(lst) , "                    ", solve_odd_even(lst), "                  ", solve_even_even(lst) )
     print("--------------------------------------------------------------------------------------------------------------------------------------------")
+    sublist_diff_values.append(solve_odd_odd(lst))
+print("El tamaño de lista es", len(lst), "\nLa cantidad posible de sublistas es",get_max_sub(lst), "\nLa cantidad de tamaños posibles de sublista es", len(set(sublist_diff_values)))
 
-print("\n\n                                CANTIDAD       SUBLISTAS              SUBLISTAS            SUBLISTAS           SUBLISTAS   ")
-print("                               POSIBLE DE     CON CANTIDAD           CON CANTIDAD         CON CANTIDAD        CON CANTIDAD                                                          ")
-print("---LISTA-------------TAMAÑO----SUBLISTAS----IMPAR DE N. IMPARES --- PAR DE N IMPARES ---IMPAR de N. PARES --  PAR DE N. PARES")
+#
+#
 
+print("\n\n               CANTIDAD          CANTIDAD            SUBLISTAS              SUBLISTAS            SUBLISTAS           SUBLISTAS   ")
+print("           DE NUMEROS PARES   DE NUMEROS IMPARES    CON CANTIDAD           CON CANTIDAD         CON CANTIDAD        CON CANTIDAD                                                          ")
+print("---LISTA------EN LA LISTA ----- EN LA LISTA ------ IMPAR DE N. IMPARES --- PAR DE N IMPARES ---IMPAR de N. PARES --  PAR DE N. PARES")
+
+sublist_diff_values = []
 for i in range (0, 16):
     lst = [int(x) for x in list('{:04b}'.format(i))]
-    print(lst, "            ", len(lst), "         ", get_max_sub(lst), "           ", solve_odd_odd(lst),
-          "                    ", solve_even_odd(lst), "                    ", solve_odd_even(lst),
-          "                  ", solve_even_even(lst))
+    print(lst, "          ",  get_even_items_qty(lst),"             ", get_odd_items_qty(lst),"                    ", solve_odd_odd(lst), "                    ",solve_even_odd(lst) , "                    ", solve_odd_even(lst), "                  ", solve_even_even(lst) )
     print("--------------------------------------------------------------------------------------------------------------------------------------------")
-
-print("\n\n                                CANTIDAD       SUBLISTAS              SUBLISTAS            SUBLISTAS           SUBLISTAS   ")
-print("                               POSIBLE DE     CON CANTIDAD           CON CANTIDAD         CON CANTIDAD        CON CANTIDAD                                                          ")
-print("---LISTA-------------TAMAÑO----SUBLISTAS----IMPAR DE N. IMPARES --- PAR DE N IMPARES ---IMPAR de N. PARES --  PAR DE N. PARES")
-
-for i in range (0, 32):
-    lst = [int(x) for x in list('{:05b}'.format(i))]
-    print(lst, "      ", len(lst), "         ", get_max_sub(lst), "             ", solve_odd_odd(lst),
-          "                 ", solve_even_odd(lst), "                    ", solve_odd_even(lst),
-          "                  ", solve_even_even(lst))
-    print("--------------------------------------------------------------------------------------------------------------------------------------------")
+    sublist_diff_values.append(solve_odd_odd(lst))
+print("El tamaño de lista es", len(lst), "\nLa cantidad posible de sublistas es",get_max_sub(lst), "\nLa cantidad de tamaños posibles de sublista es", len(set(sublist_diff_values)))
 
 
-print("\n\n                                CANTIDAD       SUBLISTAS              SUBLISTAS            SUBLISTAS           SUBLISTAS   ")
-print("                               POSIBLE DE     CON CANTIDAD           CON CANTIDAD         CON CANTIDAD        CON CANTIDAD                                                          ")
-print("---LISTA-------------TAMAÑO----SUBLISTAS----IMPAR DE N. IMPARES --- PAR DE N IMPARES ---IMPAR de N. PARES --  PAR DE N. PARES")
-
-for i in range (0, 64):
-    lst = [int(x) for x in list('{:06b}'.format(i))]
-    print(lst, "      ", len(lst), "         ", get_max_sub(lst), "             ", solve_odd_odd(lst),
-          "                 ", solve_even_odd(lst), "                    ", solve_odd_even(lst),
-          "                  ", solve_even_even(lst))
-    print("--------------------------------------------------------------------------------------------------------------------------------------------")
+# print("\n\n                                CANTIDAD       SUBLISTAS              SUBLISTAS            SUBLISTAS           SUBLISTAS   ")
+# print("                               POSIBLE DE     CON CANTIDAD           CON CANTIDAD         CON CANTIDAD        CON CANTIDAD                                                          ")
+# print("---LISTA-------------TAMAÑO----SUBLISTAS----IMPAR DE N. IMPARES --- PAR DE N IMPARES ---IMPAR de N. PARES --  PAR DE N. PARES")
+#
+# for i in range (0, 8):
+#     lst = [int(x) for x in list('{:03b}'.format(i))]
+#     print(lst, "            ",len(lst), "         ",get_max_sub(lst), "           ",solve_odd_odd(lst), "                    ",solve_even_odd(lst) , "                    ", solve_odd_even(lst), "                  ", solve_even_even(lst) )
+#     print("--------------------------------------------------------------------------------------------------------------------------------------------")
+#
+# print("\n\n                                CANTIDAD       SUBLISTAS              SUBLISTAS            SUBLISTAS           SUBLISTAS   ")
+# print("                               POSIBLE DE     CON CANTIDAD           CON CANTIDAD         CON CANTIDAD        CON CANTIDAD                                                          ")
+# print("---LISTA-------------TAMAÑO----SUBLISTAS----IMPAR DE N. IMPARES --- PAR DE N IMPARES ---IMPAR de N. PARES --  PAR DE N. PARES")
+#
+# for i in range (0, 16):
+#     lst = [int(x) for x in list('{:04b}'.format(i))]
+#     print(lst, "            ", len(lst), "         ", get_max_sub(lst), "           ", solve_odd_odd(lst),
+#           "                    ", solve_even_odd(lst), "                    ", solve_odd_even(lst),
+#           "                  ", solve_even_even(lst))
+#     print("--------------------------------------------------------------------------------------------------------------------------------------------")
+#
+# print("\n\n                                CANTIDAD       SUBLISTAS              SUBLISTAS            SUBLISTAS           SUBLISTAS   ")
+# print("                               POSIBLE DE     CON CANTIDAD           CON CANTIDAD         CON CANTIDAD        CON CANTIDAD                                                          ")
+# print("---LISTA-------------TAMAÑO----SUBLISTAS----IMPAR DE N. IMPARES --- PAR DE N IMPARES ---IMPAR de N. PARES --  PAR DE N. PARES")
+#
+# for i in range (0, 32):
+#     lst = [int(x) for x in list('{:05b}'.format(i))]
+#     print(lst, "      ", len(lst), "         ", get_max_sub(lst), "             ", solve_odd_odd(lst),
+#           "                 ", solve_even_odd(lst), "                    ", solve_odd_even(lst),
+#           "                  ", solve_even_even(lst))
+#     print("--------------------------------------------------------------------------------------------------------------------------------------------")
+#
+#
+# print("\n\n                                CANTIDAD       SUBLISTAS              SUBLISTAS            SUBLISTAS           SUBLISTAS   ")
+# print("                               POSIBLE DE     CON CANTIDAD           CON CANTIDAD         CON CANTIDAD        CON CANTIDAD                                                          ")
+# print("---LISTA-------------TAMAÑO----SUBLISTAS----IMPAR DE N. IMPARES --- PAR DE N IMPARES ---IMPAR de N. PARES --  PAR DE N. PARES")
+#
+# for i in range (0, 64):
+#     lst = [int(x) for x in list('{:06b}'.format(i))]
+#     print(lst, "      ", len(lst), "         ", get_max_sub(lst), "             ", solve_odd_odd(lst),
+#           "                 ", solve_even_odd(lst), "                    ", solve_odd_even(lst),
+#           "                  ", solve_even_even(lst))
+#     print("--------------------------------------------------------------------------------------------------------------------------------------------")
 
 
 # print("\n\n-----ARRAY-----------TAMAÑO-----SUBARRAYS------SA cant IMPAR DE IMPARES ---- SA cant PAR DE IMPARES--------     ")
