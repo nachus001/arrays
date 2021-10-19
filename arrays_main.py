@@ -275,7 +275,7 @@ for i in range (0, 32):
     sublist_ee_diff_values.append(solve_even_even(lst))
 print("El tamaño de lista es", len(lst))
 print("La totalidad posible de sublistas es",get_max_sub(lst))
-print("La cantidad de tamaños posibles de sublista con cantidad IMPAR de numeros IMPARES es", len(set(sublist_oo_diff_values)))
+print("La cantidad de tamaños posibles de sublista con cantidad IMPAR de numeros IMPARES es", len(set(sublist_oo_diff_values)), "(",set(sublist_oo_diff_values) ,")", "Lista =", sublist_oo_diff_values )
 print("La cantidad de tamaños posibles de sublista con cantidad PAR de numeros IMPARES es", len(set(sublist_eo_diff_values)))
 print("La cantidad de tamaños posibles de sublista con cantidad IMPAR de numeros PARES es", len(set(sublist_oe_diff_values)))
 print("La cantidad de tamaños posibles de sublista con cantidad PAR de numeros PARES es", len(set(sublist_ee_diff_values)))
