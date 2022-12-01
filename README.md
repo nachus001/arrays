@@ -1,0 +1,2 @@
+# arrays
+estudio sobre arrays
